@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I.I.S. "A. Meucci" Massa - Orientamento 2026/2027</title>
+  <style>
+    /* Palette Colori coordinata */
+    :root {
+      --bg-crema: #F6F1E7;
+      --blu-notte: #1F3A5F;
+      --blu-murales: #3F7DB0;
+      --terracotta: #D2492F;
+      --verde-salvia: #2D6A4F;
+      --testo-scuro: #1A2530;
+      --bianco: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-crema);
+      color: var(--testo-scuro);
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    /* Contenitore stile Smartphone / Responsive PC */
+    .mobile-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #FAFAFA;
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header con Murales */
+    .header {
+      background-color: var(--blu-notte);
+      color: var(--bianco);
+      text-align: center;
+      padding: 16px 16px 20px 16px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .murales-box {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      background-color: #ffffff;
+    }
+
+    .murales-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      color: #F2A07B;
+    }
+
+    .header h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    /* Contenuto Principale */
+    .content {
+      padding: 20px 16px;
+      flex: 1;
+    }
+
+    /* Banner Evento */
+    .event-card {
+      background: linear-gradient(135deg, var(--terracotta), #E4442E);
+      color: var(--bianco);
+      padding: 16px;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(210, 73, 47, 0.3);
+    }
+
+    .event-card .badge {
+      background-color: rgba(0,0,0,0.2);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .event-card h3 {
+      font-size: 1.2rem;
+      margin: 8px 0 4px 0;
+    }
+
+    .event-card p {
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    /* Lista Pulsanti */
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bianco);
+      border: 2px solid #E0E0E0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--blu-notte);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+
+    .btn-link:active {
+      transform: scale(0.98);
+      background-color: #F0F4F8;
+    }
+
+    .btn-link .icon {
+      font-size: 1.3rem;
+      margin-right: 12px;
+    }
+
+    .btn-link .text-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+
+    .btn-link .arrow {
+      color: var(--blu-murales);
+      font-size: 1.2rem;
+    }
+
+    /* Pulsante speciale in evidenza: Mini-Stage */
+    .btn-stage {
+      border: 2px solid var(--verde-salvia);
+      background-color: #E8F5E9;
+      color: #1B5E20;
+      box-shadow: 0 4px 10px rgba(45, 106, 79, 0.15);
+    }
+
+    .btn-stage .arrow {
+      color: var(--verde-salvia);
+    }
+
+    /* Pulsante speciale: Girls in STEM */
+    .btn-stem {
+      border-color: #D81B60;
+      background-color: #FCE4EC;
+      color: #880E4F;
+    }
+
+    .btn-stem .arrow {
+      color: #D81B60;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--blu-notte);
+      color: var(--bianco);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .footer a {
+      color: #F2A07B;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+    
+    <!-- Header con Murales Meucci (il motto "Talento e Tecnologia diventano Competenza" è già nell'immagine) -->
+    <header class="header">
+      <div class="murales-box">
+        <img src="murales.jpg" alt="Murales I.I.S. A. Meucci - Talento e Tecnologia diventano Competenza" class="murales-img">
+      </div>
+      <h1>I.I.S. "A. MEUCCI"</h1>
+      <h2>Istituto Tecnico & Liceo Scientifico</h2>
+    </header>
+
+    <!-- Contenuto Principale -->
+    <main class="content">
+
+      <!-- ===================================================== -->
+      <!-- DATI DA AGGIORNARE: PROSSIMO APPUNTAMENTO              -->
+      <!-- Cambia qui sotto solo il testo dentro <h3> e <p>.      -->
+      <!-- Non toccare il resto di questo blocco.                -->
+      <!-- ===================================================== -->
+      <div class="event-card">
+        <span class="badge">Prossimo Appuntamento</span>
+        <h3>Open Day - Scuola Aperta</h3>
+        <p>Sabato 7 Novembre 2026 | Ore 15:00 - 18:00</p>
+      </div>
+      <!-- ===================== FINE DATI DA AGGIORNARE ===================== -->
+
+      <!-- Navigazione a Pulsanti -->
+      <nav class="menu-list">
+        
+        <!-- Pulsante 1: Iscriviti ai Mini-Stage (In evidenza) -->
+        <a href="mini-stage.html" class="btn-link btn-stage">
+          <div class="text-container">
+            <span class="icon">🔬</span>
+            <span>Iscriviti ai Mini-Stage</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+
+        <!-- Pulsante 2: Presentazione della Scuola (link diretto al sito ufficiale) -->
+        <a href="https://iismeuccimassa.edu.it/scuola/presentazione/" class="btn-link" target="_blank" rel="noopener">
+          <div class="text-container">
+            <span class="icon">🏫</span>
+            <span>Presentazione della scuola</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+
+        <!-- Pulsante 3: Offerta Formativa (link diretto al sito ufficiale) -->
+        <a href="https://iismeuccimassa.edu.it/didattica/offerta-formativa/" class="btn-link" target="_blank" rel="noopener">
+          <div class="text-container">
+            <span class="icon">📚</span>
+            <span>Offerta formativa</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+
+        <!-- Pulsante 4: Partecipa agli Open Day -->
+        <a href="open-day.html" class="btn-link">
+          <div class="text-container">
+            <span class="icon">📅</span>
+            <span>Partecipa agli Open Day</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+
+        <!-- Pulsante 5: Progetto Girls in STEM -->
+        <a href="girls-in-stem.html" class="btn-link btn-stem">
+          <div class="text-container">
+            <span class="icon">👩‍💻</span>
+            <span>Progetto Girls in STEM</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+
+        <!-- Pulsante 6: Laboratori & Spazi (foto e video) -->
+        <a href="laboratori.html" class="btn-link">
+          <div class="text-container">
+            <span class="icon">📸</span>
+            <span>I Nostri Laboratori & Spazi</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+
+      </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p><strong>I.I.S. "A. Meucci"</strong></p>
+      <p>Via Marina Vecchia, 230 - 54100 Massa (MS)</p>
+      <p>Tel: 0585 252708 | <a href="https://iismeuccimassa.edu.it" target="_blank">iismeuccimassa.edu.it</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
