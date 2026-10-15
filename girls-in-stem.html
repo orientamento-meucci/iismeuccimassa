@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girls in STEM - I.I.S. "A. Meucci" Massa</title>
+
+  <!-- ANTEPRIMA PER WHATSAPP E SOCIAL -->
+  <meta name="description" content="La scienza è il tuo superpotere: il progetto Girls in STEM dell'I.I.S. A. Meucci di Massa per le ragazze di terza media.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="I.I.S. A. Meucci - Massa">
+  <meta property="og:title" content="Girls in STEM – I.I.S. &quot;A. Meucci&quot; Massa">
+  <meta property="og:description" content="La scienza è il tuo superpotere. Liceo Scientifico e Istituto Tecnico: vieni a scoprire i nostri laboratori!">
+  <meta property="og:image" content="https://orientamento-meucci.github.io/iismeuccimassa/girls-in-stem.jpg">
+  <meta property="og:url" content="https://orientamento-meucci.github.io/iismeuccimassa/girls-in-stem.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* Palette coordinata con la homepage + accento magenta del flyer */
+    :root {
+      --bg-crema: #F6F1E7;
+      --blu-notte: #1F3A5F;
+      --blu-murales: #3F7DB0;
+      --verde-salvia: #2D6A4F;
+      --testo-scuro: #1A2530;
+      --bianco: #FFFFFF;
+      --magenta: #B0246A;
+      --magenta-scuro: #7A1F4E;
+      --magenta-chiaro: #FCE4EC;
+      --oro: #F5D27A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-crema);
+      color: var(--testo-scuro);
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #FAFAFA;
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(160deg, var(--magenta-scuro), var(--magenta));
+      color: var(--bianco);
+      text-align: center;
+      padding: 16px 16px 22px 16px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .hero-box {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .school-tag {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .school-tag strong {
+      color: #F2A07B;
+      font-size: 0.95rem;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      color: var(--oro);
+    }
+
+    .header h2 {
+      font-size: 1.15rem;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    /* Contenuto */
+    .content {
+      padding: 20px 16px;
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      color: var(--magenta-scuro);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .evidenza {
+      color: var(--magenta);
+      font-weight: 700;
+    }
+
+    /* Intro */
+    .intro-card {
+      background-color: var(--magenta-chiaro);
+      border-left: 5px solid var(--magenta);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .intro-card p:last-child { margin-bottom: 0; }
+
+    /* Griglia attività di laboratorio */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .lab-item {
+      background-color: var(--bianco);
+      border: 2px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .lab-item .icon {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    /* Domande */
+    .faq-card {
+      background-color: var(--bianco);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 5px solid var(--magenta);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .faq-card h4 {
+      color: var(--magenta-scuro);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* Testimonianze */
+    .quote-card {
+      background-color: var(--bianco);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(176, 36, 106, 0.12);
+      border-top: 4px solid var(--magenta);
+    }
+
+    .quote-card p { font-style: italic; }
+
+    .quote-card .who {
+      font-style: normal;
+      font-weight: 700;
+      color: var(--magenta-scuro);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Mestieri per indirizzo */
+    .path-card {
+      background-color: var(--bianco);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 5px solid var(--blu-murales);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .path-card h4 {
+      color: var(--blu-notte);
+      margin-bottom: 6px;
+    }
+
+    .path-card p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    /* Pulsanti */
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bianco);
+      border: 2px solid #E0E0E0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--blu-notte);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+
+    .btn-link:active {
+      transform: scale(0.98);
+      background-color: #F0F4F8;
+    }
+
+    .btn-link .text-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+
+    .btn-link .icon {
+      font-size: 1.3rem;
+      margin-right: 12px;
+    }
+
+    .btn-link .arrow {
+      color: var(--blu-murales);
+      font-size: 1.2rem;
+    }
+
+    .btn-stage {
+      border-color: var(--verde-salvia);
+      background-color: #E8F5E9;
+      color: #1B5E20;
+    }
+
+    .btn-stage .arrow { color: var(--verde-salvia); }
+
+    .btn-stem {
+      border-color: #D81B60;
+      background-color: var(--magenta-chiaro);
+      color: #880E4F;
+    }
+
+    .btn-stem .arrow { color: #D81B60; }
+
+    .info-box {
+      background-color: var(--magenta-chiaro);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+
+    .info-box p:last-child { margin-bottom: 0; }
+
+    .info-box a {
+      color: var(--magenta);
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--blu-notte);
+      color: var(--bianco);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .footer p { margin-bottom: 2px; line-height: 1.4; }
+
+    .footer a {
+      color: #F2A07B;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+
+    <!-- Header con immagine del flyer (file da caricare nel repository: girls-in-stem.jpg) -->
+    <header class="header">
+      <div class="hero-box">
+        <img src="girls-in-stem.jpg" alt="Silhouette di una ragazza circondata da formule, molecole, circuiti e strumenti scientifici" class="hero-img">
+      </div>
+      <p class="school-tag"><strong>I.I.S. "A. Meucci" – Massa</strong><br>Liceo Scientifico &amp; Istituto Tecnico</p>
+      <h1>GIRLS IN STEM</h1>
+      <h2>La scienza è il tuo superpotere</h2>
+    </header>
+
+    <main class="content">
+
+      <!-- 1. INTRODUZIONE -->
+      <section>
+        <div class="intro-card">
+          <p>Ti piace capire come funzionano le cose? Inventare, costruire, risolvere problemi?</p>
+          <p>Con la scienza e la tecnologia puoi progettare energia pulita per il pianeta, studiare come curare le malattie o creare un'app che aiuta le persone. Al Meucci impari a farlo <span class="evidenza">insieme agli altri, in laboratorio, con le tue mani e le tue idee</span>.</p>
+          <p>Al Meucci puoi scegliere tra <span class="evidenza">due strade</span>: il <strong>Liceo Scientifico delle Scienze Applicate</strong>, anche con curvatura biomedica, e l'<strong>Istituto Tecnico Tecnologico</strong>, con Informatica, Elettronica e Meccanica.</p>
+          <p>Scegli in base a ciò che ti appassiona: <span class="evidenza">il resto lo impari qui</span>.</p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- 2. COSA FARAI NEI LABORATORI                           -->
+      <!-- Verifica che le attività corrispondano ai laboratori   -->
+      <!-- reali; per cambiarne una modifica icona e testo.       -->
+      <!-- ===================================================== -->
+      <section>
+        <h2 class="section-title">🔬 Cosa farai nei laboratori</h2>
+        <div class="lab-grid">
+          <div class="lab-item"><span class="icon">🔬</span>Scoprire il mondo invisibile delle cellule al microscopio</div>
+          <div class="lab-item"><span class="icon">⚗️</span>Far reagire le sostanze e svelare i segreti della materia</div>
+          <div class="lab-item"><span class="icon">🌈</span>Esplorare luce, suono ed energia con gli esperimenti di fisica</div>
+          <div class="lab-item"><span class="icon">🖨️</span>Disegnare un oggetto e vederlo nascere in 3D</div>
+          <div class="lab-item"><span class="icon">💻</span>Creare app e siti web</div>
+          <div class="lab-item"><span class="icon">💡</span>Progettare e accendere un circuito</div>
+          <div class="lab-item"><span class="icon">🤖</span>Programmare un robot</div>
+          <div class="lab-item"><span class="icon">⚙️</span>Costruire e far muovere una macchina</div>
+        </div>
+      </section>
+
+      <!-- 3. DOMANDE CHE FORSE TI FAI -->
+      <section>
+        <h2 class="section-title">💭 Domande che forse ti fai</h2>
+
+        <!-- DATI DA AGGIORNARE: se esiste un'iniziativa concreta per le studentesse (gruppo, incontri, docente di riferimento), aggiungila in questa risposta -->
+        <div class="faq-card">
+          <h4>Mi troverò bene?</h4>
+          <p>In laboratorio si lavora in gruppo e ci si aiuta a vicenda. I docenti ti seguono passo passo, e la scuola ha una sede unica con giardino e due palestre: un ambiente a misura di studente.</p>
+        </div>
+
+        <div class="faq-card">
+          <h4>Devo essere bravissima in matematica?</h4>
+          <p>No. Servono curiosità e voglia di mettersi in gioco. La matematica si impara con l'esercizio, un passo alla volta, e qui troverai chi ti aiuta a farlo.</p>
+        </div>
+
+        <div class="faq-card">
+          <h4>Cosa posso fare dopo il diploma?</h4>
+          <p>Il Liceo delle Scienze Applicate ti prepara a qualsiasi facoltà universitaria, in particolare quelle scientifiche, di ingegneria e mediche. Con il Tecnico puoi continuare all'università o negli ITS, oppure iniziare subito a lavorare: chi si diploma in un istituto tecnico trova lavoro più facilmente e con stipendi più alti. E sia dal liceo sia dal tecnico i diplomati esprimono alti livelli di soddisfazione per la scelta fatta.</p>
+          <p style="font-size:0.75rem; color:#777; margin-top:6px; margin-bottom:0;">Fonte: AlmaDiploma, indagini 2025 sui diplomati</p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- 4. DATI DA AGGIORNARE: TESTIMONIANZE                   -->
+      <!-- Sostituisci il testo tra virgolette e il nome/classe.  -->
+      <!-- Per aggiungerne una, copia un intero blocco quote-card.-->
+      <!-- SEZIONE NASCOSTA: per mostrarla cancella la riga      -->
+      <!-- "INIZIO SEZIONE NASCOSTA" e la riga "FINE SEZIONE      -->
+      <!-- NASCOSTA" qui sotto.                                   -->
+      <!-- ===================================================== -->
+      <!-- INIZIO SEZIONE NASCOSTA
+      <section>
+        <h2 class="section-title">💬 Chi l'ha scelto prima di te</h2>
+
+        <div class="quote-card">
+          <p>"[Testimonianza da inserire: perché hai scelto il Meucci e cosa ti piace di più]"</p>
+          <p class="who">— [Nome], classe [es. 3ª Informatica]</p>
+        </div>
+
+        <div class="quote-card">
+          <p>"[Testimonianza da inserire: un laboratorio o un progetto che ti ha appassionata]"</p>
+          <p class="who">— [Nome], classe [es. 4ª Liceo Scienze Applicate]</p>
+        </div>
+
+        <div class="quote-card">
+          <p>"[Testimonianza da inserire: cosa fai oggi e un consiglio a chi deve scegliere]"</p>
+          <p class="who">— [Nome], ex alunna, oggi [università / lavoro]</p>
+        </div>
+      </section>
+      FINE SEZIONE NASCOSTA -->
+      <!-- ===================== FINE DATI DA AGGIORNARE ===================== -->
+
+      <!-- 5. COSA PUOI DIVENTARE -->
+      <section>
+        <h2 class="section-title">🚀 Cosa puoi diventare</h2>
+
+        <div class="path-card">
+          <h4>🔬 Liceo Scientifico Scienze Applicate</h4>
+          <p>La strada verso l'università: ingegneria, biotecnologie, ricerca scientifica e, con la curvatura biomedica, medicina e professioni sanitarie.</p>
+        </div>
+
+        <div class="path-card">
+          <h4>💻 Informatica e Telecomunicazioni</h4>
+          <p>Sviluppatrice di software e app, esperta di sicurezza informatica, analista di dati, progettista di reti.</p>
+        </div>
+
+        <div class="path-card">
+          <h4>⚡ Elettronica ed Elettrotecnica</h4>
+          <p>Progettista di circuiti, tecnica di automazione e robotica, esperta di impianti per le energie rinnovabili.</p>
+        </div>
+
+        <div class="path-card">
+          <h4>⚙️ Meccanica, Meccatronica ed Energia</h4>
+          <p>Progettista CAD, tecnica di stampa 3D e produzione industriale, esperta di efficienza energetica.</p>
+        </div>
+      </section>
+
+      <!-- 6. VIENI A PROVARE -->
+      <section>
+        <h2 class="section-title">✨ Vieni a provare!</h2>
+        <p>Il modo migliore per capire se una scuola fa per te è entrarci: vieni a vedere i laboratori e a provare una lezione.</p>
+
+        <nav class="menu-list">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4GkdPgSQ5doYIz-sLmwFf1xutpIGsrE7yRJ6kq7-lq8RJDg/viewform" class="btn-link btn-stage" target="_blank" rel="noopener">
+            <div class="text-container">
+              <span class="icon">🔬</span>
+              <span>Iscriviti ai Mini-Stage</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+
+          <a href="open-day.html" class="btn-link btn-stem">
+            <div class="text-container">
+              <span class="icon">📅</span>
+              <span>Partecipa agli Open Day</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+
+          <a href="https://iismeuccimassa.edu.it/scuola/presentazione/" class="btn-link" target="_blank" rel="noopener">
+            <div class="text-container">
+              <span class="icon">🏫</span>
+              <span>Presentazione della scuola</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+
+          <a href="https://iismeuccimassa.edu.it/didattica/offerta-formativa/" class="btn-link" target="_blank" rel="noopener">
+            <div class="text-container">
+              <span class="icon">📚</span>
+              <span>Offerta formativa</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+
+          <a href="index.html" class="btn-link">
+            <div class="text-container">
+              <span class="icon">🏠</span>
+              <span>Torna alla pagina principale</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+        </nav>
+
+        <div class="info-box">
+          <p><strong>Per i genitori</strong></p>
+          <p>Le materie scientifiche e tecniche sono un vero <strong>superpotere</strong>: danno a vostra figlia autonomia, libertà di scelta e gli strumenti per realizzare i propri sogni, senza che siano gli stereotipi a decidere per lei.</p>
+          <p>Venite con lei agli Open Day: docenti e studenti saranno felici di rispondere a tutte le vostre domande.</p>
+          <!-- DATI DA AGGIORNARE: nome del referente, se c'è -->
+          <p>Contatti: <a href="mailto:msis01800l@istruzione.it">msis01800l@istruzione.it</a></p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p><strong>I.I.S. "A. Meucci"</strong></p>
+      <p>Via Marina Vecchia, 230 - 54100 Massa (MS)</p>
+      <p>Tel: 0585 252708 | <a href="https://iismeuccimassa.edu.it" target="_blank" rel="noopener">iismeuccimassa.edu.it</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
