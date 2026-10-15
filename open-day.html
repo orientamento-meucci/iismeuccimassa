@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Day - I.I.S. "A. Meucci" Massa</title>
+
+  <!-- ANTEPRIMA PER WHATSAPP E SOCIAL -->
+  <meta name="description" content="Open Day all'I.I.S. A. Meucci di Massa: vieni a visitare la scuola, senza prenotazione.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="I.I.S. A. Meucci - Massa">
+  <meta property="og:title" content="Open Day – I.I.S. &quot;A. Meucci&quot; Massa">
+  <meta property="og:description" content="Scuola Aperta: vieni a visitare aule, laboratori e palestre. Ingresso libero, non serve prenotare!">
+  <meta property="og:image" content="https://orientamento-meucci.github.io/iismeuccimassa/anteprima.jpg">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="623">
+  <meta property="og:url" content="https://orientamento-meucci.github.io/iismeuccimassa/open-day.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg-crema: #F6F1E7;
+      --blu-notte: #1F3A5F;
+      --blu-murales: #3F7DB0;
+      --terracotta: #D2492F;
+      --verde-salvia: #2D6A4F;
+      --testo-scuro: #1A2530;
+      --bianco: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-crema);
+      color: var(--testo-scuro);
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #FAFAFA;
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: var(--blu-notte);
+      color: var(--bianco);
+      text-align: center;
+      padding: 24px 16px 22px 16px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .school-tag {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .school-tag strong {
+      color: #F2A07B;
+      font-size: 0.95rem;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: #F2A07B;
+      margin-bottom: 4px;
+    }
+
+    .header h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+
+    .content {
+      padding: 20px 16px;
+      flex: 1;
+    }
+
+    section { margin-bottom: 24px; }
+
+    p {
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      color: var(--blu-notte);
+      margin-bottom: 10px;
+    }
+
+    /* Banner ingresso libero */
+    .free-badge {
+      background-color: #E8F5E9;
+      border: 2px solid var(--verde-salvia);
+      color: #1B5E20;
+      border-radius: 12px;
+      padding: 12px 14px;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .free-badge span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    /* Date */
+    .date-card {
+      background: linear-gradient(135deg, var(--terracotta), #E4442E);
+      color: var(--bianco);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(210, 73, 47, 0.25);
+    }
+
+    .date-card .day { font-weight: 700; font-size: 1.05rem; }
+    .date-card .time { font-size: 0.95rem; opacity: 0.95; }
+
+    .stage-card {
+      background-color: var(--bianco);
+      border: 2px solid var(--verde-salvia);
+      color: #1B5E20;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+
+    .info-card {
+      background-color: var(--bianco);
+      border-left: 5px solid var(--blu-murales);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .info-card p:last-child { margin-bottom: 0; }
+
+    .map-link {
+      color: var(--blu-murales);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Pulsanti */
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bianco);
+      border: 2px solid #E0E0E0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--blu-notte);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .btn-link:active { transform: scale(0.98); background-color: #F0F4F8; }
+
+    .btn-link .text-container { display: flex; align-items: center; flex: 1; }
+    .btn-link .icon { font-size: 1.3rem; margin-right: 12px; }
+    .btn-link .arrow { color: var(--blu-murales); font-size: 1.2rem; }
+
+    .btn-stage {
+      border-color: var(--verde-salvia);
+      background-color: #E8F5E9;
+      color: #1B5E20;
+    }
+
+    .btn-stage .arrow { color: var(--verde-salvia); }
+
+    .footer {
+      background-color: var(--blu-notte);
+      color: var(--bianco);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .footer p { margin-bottom: 2px; line-height: 1.4; }
+    .footer a { color: #F2A07B; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+
+    <header class="header">
+      <p class="school-tag"><strong>I.I.S. "A. Meucci" – Massa</strong><br>Liceo Scientifico &amp; Istituto Tecnico</p>
+      <h1>OPEN DAY</h1>
+      <h2>Scuola Aperta 2026/2027</h2>
+    </header>
+
+    <main class="content">
+
+      <div class="free-badge">
+        🚪 Ingresso libero, non serve prenotare
+        <span>Basta venire: ti aspettiamo!</span>
+      </div>
+
+      <!-- ===================================================== -->
+      <!-- DATI DA AGGIORNARE: DATE OPEN DAY                      -->
+      <!-- Quando una data è passata, cancella il suo blocco      -->
+      <!-- date-card (da <div class="date-card"> a </div>).      -->
+      <!-- ===================================================== -->
+      <section>
+        <h2 class="section-title">📅 Le date</h2>
+
+        <div class="date-card">
+          <span class="day">Sabato 7 novembre 2026</span>
+          <span class="time">15:00 – 18:00</span>
+        </div>
+
+        <div class="date-card">
+          <span class="day">Sabato 28 novembre 2026</span>
+          <span class="time">15:00 – 18:00</span>
+        </div>
+
+        <div class="date-card">
+          <span class="day">Sabato 9 gennaio 2027</span>
+          <span class="time">15:00 – 18:00</span>
+        </div>
+      </section>
+      <!-- ===================== FINE DATI DA AGGIORNARE ===================== -->
+
+      <section>
+        <div class="info-card">
+          <p>Durante l'Open Day potrete visitare aule, laboratori, palestre e il giardino della scuola. Docenti e studenti vi accompagneranno e vi presenteranno i nostri indirizzi, l'offerta formativa e la vita al Meucci.</p>
+          <p>Vieni con la tua famiglia e con i tuoi amici: <strong>porta tutte le tue domande!</strong></p>
+          <p>📍 Via Marina Vecchia, 230 – Massa<br>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Via+Marina+Vecchia+230+54100+Massa+MS" target="_blank" rel="noopener">Apri in Google Maps ➔</a></p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- DATI DA AGGIORNARE: DATE MINI-STAGE                    -->
+      <!-- ===================================================== -->
+      <section>
+        <h2 class="section-title">🔬 Vuoi provare una lezione?</h2>
+        <p>Ai Mini-Stage entri in laboratorio e partecipi a una vera attività insieme ai nostri docenti. Per i Mini-Stage è necessaria l'iscrizione.</p>
+
+        <div class="stage-card"><span>Martedì 10 novembre 2026</span><span>15:30 – 17:30</span></div>
+        <div class="stage-card"><span>Mercoledì 2 dicembre 2026</span><span>15:30 – 17:30</span></div>
+        <div class="stage-card"><span>Giovedì 14 gennaio 2027</span><span>15:30 – 17:30</span></div>
+      <!-- ===================== FINE DATI DA AGGIORNARE ===================== -->
+
+        <nav class="menu-list">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4GkdPgSQ5doYIz-sLmwFf1xutpIGsrE7yRJ6kq7-lq8RJDg/viewform" class="btn-link btn-stage" target="_blank" rel="noopener">
+            <div class="text-container">
+              <span class="icon">✍️</span>
+              <span>Iscriviti ai Mini-Stage</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+
+          <a href="index.html" class="btn-link">
+            <div class="text-container">
+              <span class="icon">🏠</span>
+              <span>Torna alla pagina principale</span>
+            </div>
+            <span class="arrow">➔</span>
+          </a>
+        </nav>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p><strong>I.I.S. "A. Meucci"</strong></p>
+      <p>Via Marina Vecchia, 230 - 54100 Massa (MS)</p>
+      <p>Tel: 0585 252708 | <a href="https://iismeuccimassa.edu.it" target="_blank" rel="noopener">iismeuccimassa.edu.it</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
