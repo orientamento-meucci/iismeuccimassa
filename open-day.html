@@ -57,9 +57,25 @@
       background-color: var(--blu-notte);
       color: var(--bianco);
       text-align: center;
-      padding: 24px 16px 22px 16px;
+      padding: 16px 16px 22px 16px;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+    }
+
+    .photo-box {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .school-tag {
@@ -225,6 +241,11 @@
   <div class="mobile-container">
 
     <header class="header">
+      <!-- FOTO IN CIMA: carica nel repository una foto orizzontale chiamata open-day.jpg -->
+      <!-- Se la foto non c'è, il riquadro sparisce da solo.                              -->
+      <div class="photo-box">
+        <img src="open-day.jpg" alt="Un ambiente dell'I.I.S. A. Meucci" onerror="this.parentNode.style.display='none';">
+      </div>
       <p class="school-tag"><strong>I.I.S. "A. Meucci" – Massa</strong><br>Liceo Scientifico &amp; Istituto Tecnico</p>
       <h1>OPEN DAY</h1>
       <h2>Scuola Aperta 2026/2027</h2>
@@ -234,6 +255,7 @@
 
       <div class="free-badge">
         🚪 Ingresso libero, non serve prenotare
+        <span>Basta venire: ti aspettiamo!</span>
       </div>
 
       <!-- ===================================================== -->
