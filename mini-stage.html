@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Stage - I.I.S. "A. Meucci" Massa</title>
+
+  <!-- ANTEPRIMA PER WHATSAPP E SOCIAL -->
+  <meta name="description" content="Mini-Stage all'I.I.S. A. Meucci di Massa: un pomeriggio da studente nei nostri laboratori. Per studenti di terza media.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="I.I.S. A. Meucci - Massa">
+  <meta property="og:title" content="Mini-Stage – I.I.S. &quot;A. Meucci&quot; Massa">
+  <meta property="og:description" content="Un pomeriggio da studente del Meucci: scegli i laboratori e vieni a provarli!">
+  <meta property="og:image" content="https://orientamento-meucci.github.io/iismeuccimassa/anteprima.jpg">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="623">
+  <meta property="og:url" content="https://orientamento-meucci.github.io/iismeuccimassa/mini-stage.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg-crema: #F6F1E7;
+      --blu-notte: #1F3A5F;
+      --blu-murales: #3F7DB0;
+      --terracotta: #D2492F;
+      --verde-salvia: #2D6A4F;
+      --testo-scuro: #1A2530;
+      --bianco: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-crema);
+      color: var(--testo-scuro);
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #FAFAFA;
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: var(--verde-salvia);
+      color: var(--bianco);
+      text-align: center;
+      padding: 24px 16px 22px 16px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .school-tag {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .school-tag strong {
+      color: #F2A07B;
+      font-size: 0.95rem;
+    }
+
+    .header h1 {
+      font-size: 1.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .header h2 {
+      font-size: 1.05rem;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .content {
+      padding: 20px 16px;
+      flex: 1;
+    }
+
+    section { margin-bottom: 26px; }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      color: var(--blu-notte);
+      margin-bottom: 12px;
+    }
+
+    .intro p:last-child { margin-bottom: 0; }
+
+    /* Riquadro informazioni */
+    .info-card {
+      background-color: #E8F5E9;
+      border: 2px solid var(--verde-salvia);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .info-row {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .info-row strong { color: #1B5E20; }
+
+    .date-list {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .date-list li {
+      background-color: var(--bianco);
+      border-radius: 10px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      color: var(--blu-notte);
+      white-space: nowrap;
+      gap: 8px;
+    }
+
+    .rule {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* Pulsante iscrizione */
+    .btn-iscriviti {
+      display: block;
+      text-align: center;
+      background-color: var(--terracotta);
+      color: var(--bianco);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 16px;
+      border-radius: 14px;
+      margin-top: 16px;
+      box-shadow: 0 4px 12px rgba(210, 73, 47, 0.35);
+    }
+
+    .btn-iscriviti:active { transform: scale(0.98); }
+
+    /* Schede laboratori */
+    .lab-card {
+      background-color: var(--bianco);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Spazio foto 4:3. Se la foto non c'è, si vede il colore con l'icona */
+    .lab-photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: var(--blu-murales);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .lab-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lab-text { padding: 12px 16px 14px 16px; }
+
+    .lab-text h3 {
+      color: var(--blu-notte);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .lab-text p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .closing {
+      text-align: center;
+      font-weight: 600;
+      color: var(--blu-notte);
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bianco);
+      border: 2px solid #E0E0E0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--blu-notte);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 14px;
+    }
+
+    .btn-link .text-container { display: flex; align-items: center; flex: 1; }
+    .btn-link .icon { font-size: 1.3rem; margin-right: 12px; }
+    .btn-link .arrow { color: var(--blu-murales); font-size: 1.2rem; }
+
+    .footer {
+      background-color: var(--blu-notte);
+      color: var(--bianco);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .footer p { margin-bottom: 2px; line-height: 1.4; }
+    .footer a { color: #F2A07B; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+
+    <header class="header">
+      <p class="school-tag"><strong>I.I.S. "A. Meucci" – Massa</strong><br>Liceo Scientifico &amp; Istituto Tecnico</p>
+      <h1>🔬 MINI-STAGE</h1>
+      <h2>Un pomeriggio da studente del Meucci</h2>
+    </header>
+
+    <main class="content">
+
+      <!-- 1. COS'È -->
+      <section class="intro">
+        <p>Il Mini-Stage è un pomeriggio da studente del Meucci. Entri in laboratorio, indossi il camice o ti siedi al computer e partecipi a una vera attività insieme ai nostri docenti e ai nostri studenti.</p>
+        <p>È il modo migliore per capire cosa ti piace davvero: <strong>non guardando da fuori, ma provando con le tue mani.</strong></p>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- 2. DATI DA AGGIORNARE: DATE E ORARI                    -->
+      <!-- Quando una data è passata, cancella la sua riga <li>.  -->
+      <!-- ===================================================== -->
+      <section>
+        <div class="info-card">
+          <p class="info-row"><strong>👦👧 Per chi:</strong> studenti e studentesse di terza media</p>
+
+          <div class="info-row">
+            <strong>📅 Le date:</strong>
+            <ul class="date-list">
+              <li><span>Martedì 10 novembre</span><span>15:30 – 17:30</span></li>
+              <li><span>Mercoledì 2 dicembre</span><span>15:30 – 17:30</span></li>
+              <li><span>Giovedì 14 gennaio</span><span>15:30 – 17:30</span></li>
+            </ul>
+          </div>
+
+          <p class="rule"><strong>✍️ Come funziona:</strong> l'iscrizione è necessaria. Per ogni data puoi scegliere fino a due laboratori. Vuoi provarne altri? Compila di nuovo il modulo e iscriviti anche a un'altra data: puoi partecipare a più Mini-Stage.</p>
+        </div>
+
+        <a class="btn-iscriviti" href="https://docs.google.com/forms/d/e/1FAIpQLSc4GkdPgSQ5doYIz-sLmwFf1xutpIGsrE7yRJ6kq7-lq8RJDg/viewform" target="_blank" rel="noopener">Iscriviti ora ➔</a>
+      </section>
+      <!-- ===================== FINE DATI DA AGGIORNARE ===================== -->
+
+      <!-- ===================================================== -->
+      <!-- 3. I LABORATORI                                        -->
+      <!-- Foto da caricare nel repository (orizzontali, 4:3):    -->
+      <!-- lab-fisica.jpg, lab-biologia.jpg, lab-chimica.jpg,     -->
+      <!-- lab-meccanica.jpg, lab-informatica.jpg,                -->
+      <!-- lab-elettrotecnica.jpg                                 -->
+      <!-- Finché una foto manca, si vede il riquadro con icona.  -->
+      <!-- ===================================================== -->
+      <section>
+        <h2 class="section-title">🧪 Scegli i tuoi laboratori</h2>
+
+        <div class="lab-card">
+          <div class="lab-photo">🌈<img src="lab-fisica.jpg" alt="Laboratorio di fisica" onerror="this.remove()"></div>
+          <div class="lab-text">
+            <h3>Fisica</h3>
+            <p>Luce, suono, elettricità: scopri le leggi che fanno funzionare il mondo con esperimenti che si vedono e si toccano.</p>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-photo">🔬<img src="lab-biologia.jpg" alt="Laboratorio di biologia" onerror="this.remove()"></div>
+          <div class="lab-text">
+            <h3>Biologia</h3>
+            <p>Al microscopio scopri le cellule, e con i modelli anatomici scopri com'è fatto il corpo umano.</p>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-photo">⚗️<img src="lab-chimica.jpg" alt="Laboratorio di chimica" onerror="this.remove()"></div>
+          <div class="lab-text">
+            <h3>Chimica</h3>
+            <p>Misura, mescola, osserva: le sostanze reagiscono e cambiano colore davanti ai tuoi occhi.</p>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-photo">⚙️<img src="lab-meccanica.jpg" alt="Laboratorio di meccanica" onerror="this.remove()"></div>
+          <div class="lab-text">
+            <h3>Meccanica</h3>
+            <p>Macchine, strumenti di misura e materiali: vedi come nasce un pezzo meccanico.</p>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-photo">💻<img src="lab-informatica.jpg" alt="Laboratorio di informatica" onerror="this.remove()"></div>
+          <div class="lab-text">
+            <h3>Informatica</h3>
+            <p>Scrivi le tue prime righe di codice e scopri cosa c'è dietro le app che usi ogni giorno.</p>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-photo">💡<img src="lab-elettrotecnica.jpg" alt="Laboratorio di elettrotecnica" onerror="this.remove()"></div>
+          <div class="lab-text">
+            <h3>Elettrotecnica</h3>
+            <p>Collega, accendi, controlla: costruisci un circuito e fai funzionare un impianto.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CHIUSURA -->
+      <section>
+        <p class="closing">Scegli i laboratori che ti incuriosiscono di più e vieni a provarli: ti aspettiamo!</p>
+
+        <a class="btn-iscriviti" href="https://docs.google.com/forms/d/e/1FAIpQLSc4GkdPgSQ5doYIz-sLmwFf1xutpIGsrE7yRJ6kq7-lq8RJDg/viewform" target="_blank" rel="noopener">Iscriviti ora ➔</a>
+
+        <a href="index.html" class="btn-link">
+          <div class="text-container">
+            <span class="icon">🏠</span>
+            <span>Torna alla pagina principale</span>
+          </div>
+          <span class="arrow">➔</span>
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p><strong>I.I.S. "A. Meucci"</strong></p>
+      <p>Via Marina Vecchia, 230 - 54100 Massa (MS)</p>
+      <p>Tel: 0585 252708 | <a href="https://iismeuccimassa.edu.it" target="_blank" rel="noopener">iismeuccimassa.edu.it</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

@@ -195,6 +195,15 @@
       color: var(--verde-salvia);
     }
 
+    /* Sottotitolo piccolo dentro un pulsante */
+    .btn-sub {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
     /* Pulsante speciale: Girls in STEM */
     .btn-stem {
       border-color: #D81B60;
@@ -253,11 +262,11 @@
       <!-- Navigazione a Pulsanti -->
       <nav class="menu-list">
         
-        <!-- Pulsante 1: Iscriviti ai Mini-Stage (In evidenza) -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4GkdPgSQ5doYIz-sLmwFf1xutpIGsrE7yRJ6kq7-lq8RJDg/viewform" class="btn-link btn-stage" target="_blank" rel="noopener">
+        <!-- Pulsante 1: Iscriviti ai Mini-Stage (In evidenza) - porta alla pagina mini-stage.html -->
+        <a href="mini-stage.html" class="btn-link btn-stage">
           <div class="text-container">
             <span class="icon">🔬</span>
-            <span>Iscriviti ai Mini-Stage</span>
+            <span>Iscriviti ai Mini-Stage<span class="btn-sub">Scopri i nostri laboratori</span></span>
           </div>
           <span class="arrow">➔</span>
         </a>
